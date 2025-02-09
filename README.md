@@ -6,12 +6,11 @@ SELECT COUNT(*) AS total_records
 FROM `kestra-week2.hw3.yellow_taxi_2024`;
 ```
 
-Q2. 18.82 MB for the External Table and 47.60 MB for the Materialized Table
+Q2. 0 MB for the External Table and 155.12 MB for the Materialized Table
 
-```sql
-SELECT count(distinct PULocationID) FROM `kestra-week2.hw3.yellow_taxi_external_2024` ;
-SELECT count(distinct PULocationID) FROM `kestra-week2.hw3.yellow_taxi_2024` 
-```
+This query will process 0 B when run.
+
+This query will process 155.12 MB when run.
 
 Q3: 
 
@@ -19,7 +18,7 @@ BigQuery is a columnar database, and it only scans the specific columns requeste
 
 Q4: 8,333
 
-```jsx
+```
 SELECT COUNT(*) FROM kestra-week2.hw3.yellow_taxi_2024 WHERE fare_amount=0; 
 ```
 
@@ -42,3 +41,7 @@ SELECT distinct VendorID FROM `kestra-week2.hw3.optimized_yellow_taxi` where DAT
 Q7. GCP Bucket
 
 Q8. False
+
+Q9. This query will process 0 B when run.
+
+because BigQuery uses metadata from the materialized table to return the count without scanning the actual data.
